@@ -1,3 +1,6 @@
+import sys #allows you to look into system memory among other things - you will see this in action under lisrt comp and gen diffrences
+
+
 ##List Comprehensions - Certain lists are very straightforward to create- some are even passed into your
 #code as parameters and don't require any work at all. Others take a bit more effort:
 
@@ -48,3 +51,19 @@ for n in squared_ge:
 #But the objects are noi identical
 print(squared_lc)
 print(squared_ge)
+
+
+#############################################################
+#Diffrence between List Comprehensions and Generator Expressions - When writing code for yourself, you will almost always use
+#list comprehensions. If you're ever working with big datasets in your career, remember that generator expressions will use less
+#memory and keep your servers happy.The key difference between list comprehensions and generator expressions is that list comprehensions
+#create new, complete lists while generator expressions save the code to create new, complete lists. Because list comprehensions create
+#the lists as soon as they are read by the interpreter, their data is easily accessible. A list is much faster to use than a generator.
+
+list_comprehension = [n for n in range(100000)]
+# Returns the size of an object in bytes
+print(sys.getsizeof(list_comprehension))
+
+generator_expression = (n for n in range(100000))
+# Returns the size of an object in bytes
+print(sys.getsizeof(generator_expression))
