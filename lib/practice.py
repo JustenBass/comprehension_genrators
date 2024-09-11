@@ -20,3 +20,8 @@ def even_nums(num_list):
 
 even_nums([1,2,3,4,5,6])
 
+#add explaintion to each string element in list with a list comprehension
+def explanation(str_list):
+    str_list = [s + '!' for s in str_list]
+    print(str_list)
+explanation(['Hello', 'World'])
