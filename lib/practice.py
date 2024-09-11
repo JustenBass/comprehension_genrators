@@ -25,3 +25,26 @@ def explanation(str_list):
     str_list = [s + '!' for s in str_list]
     print(str_list)
 explanation(['Hello', 'World'])
+
+#############################################################
+##Generator Expressions - are very similar to list comprehensions. They use almost identical
+##syntax to produce iterable objects in a single line:
+
+one_to_three = range(1, 4) #this will produce a range of 1,2,3
+
+#A list comprehension uses square brackets
+squared_lc = [n ** 2 for n in one_to_three]
+
+#A generator uses parenthesis
+squared_ge = (n ** 2 for n in one_to_three)
+
+#Looping through each shows identical values
+for n in squared_lc:
+    print(n)
+
+for n in squared_ge:
+    print(n)
+
+#But the objects are noi identical
+print(squared_lc)
+print(squared_ge)
